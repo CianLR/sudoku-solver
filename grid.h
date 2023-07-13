@@ -1,8 +1,8 @@
 #pragma once
 
-class SudokuGrid {
+class Grid {
  public:
-  SudokuGrid();
+  Grid();
 
   bool SetCell(int x, int y, int n);
   void ClearCell(int x, int y);

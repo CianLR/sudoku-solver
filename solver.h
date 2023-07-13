@@ -1,5 +1,5 @@
 #pragma once
 
-#include "sudoku_grid.h"
+#include "grid.h"
 
-bool Solve(SudokuGrid &g);
+bool Solve(Grid &g);

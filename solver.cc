@@ -1,7 +1,7 @@
 #include "solver.h"
-#include "sudoku_grid.h"
+#include "grid.h"
 
-bool RecurBack(SudokuGrid &g, int r, int c) {
+bool RecurBack(Grid &g, int r, int c) {
     if (r == 9) return true;
     if (g.GetCell(c, r) != 0) {
         return RecurBack(g, r + (c == 8), (c + 1) % 9);
@@ -17,10 +17,10 @@ bool RecurBack(SudokuGrid &g, int r, int c) {
     return false;
 }
 
-bool RecursiveBacktracking(SudokuGrid &g) {
+bool RecursiveBacktracking(Grid &g) {
     return RecurBack(g, 0, 0);
 }
 
-bool Solve(SudokuGrid &g) {
+bool Solve(Grid &g) {
     return RecursiveBacktracking(g);
 }

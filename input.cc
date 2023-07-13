@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 #include "input.h"
-#include "sudoku_grid.h"
+#include "grid.h"
 
-std::optional<SudokuGrid> ReadGridStdin() {
-    SudokuGrid g;
+std::optional<Grid> ReadGridStdin() {
+    Grid g;
     for (int y = 0; y < 9; ++y) {
         char line[10];
         if (scanf("%10c", line) != 1) {

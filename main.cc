@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-#include "sudoku_grid.h"
+#include "grid.h"
 #include "input.h"
 #include "solver.h"
 

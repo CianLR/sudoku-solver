@@ -2,6 +2,6 @@
 
 #include <optional>
 
-#include "sudoku_grid.h"
+#include "grid.h"
 
-std::optional<SudokuGrid> ReadGridStdin();
+std::optional<Grid> ReadGridStdin();

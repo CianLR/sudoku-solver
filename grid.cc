@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#include "sudoku_grid.h"
+#include "grid.h"
 
-SudokuGrid::SudokuGrid() : cells{0} {}
+Grid::Grid() : cells{0} {}
 
 int CalcIndex(int x, int y) {
     if (x < 0 || x >= 9) return false;
@@ -14,7 +14,7 @@ int CalcIndex(int x, int y) {
     return index;
 }
 
-bool SudokuGrid::SetCell(int x, int y, int n) {
+bool Grid::SetCell(int x, int y, int n) {
     if (n <= 0 || n > 9) {
         return false;
     }
@@ -29,19 +29,19 @@ bool SudokuGrid::SetCell(int x, int y, int n) {
     return true;
 }
 
-void SudokuGrid::ClearCell(int x, int y) {
+void Grid::ClearCell(int x, int y) {
     int index = CalcIndex(x, y);
     if (index != -1) {
         cells[index] = 0;
     }
 }
 
-int SudokuGrid::GetCell(int x, int y) const {
+int Grid::GetCell(int x, int y) const {
     int index = CalcIndex(x, y);
     return index == -1 ? -1 : cells[index];
 }
 
-void SudokuGrid::Print() const {
+void Grid::Print() const {
     for (int y = 0; y < 9; ++y) {
         for (int x = 0; x < 9; ++x) {
             int n = GetCell(x, y);
@@ -62,7 +62,7 @@ void SudokuGrid::Print() const {
     }
 }
 
-bool SudokuGrid::IsValidMove(int x, int y, int n) const {
+bool Grid::IsValidMove(int x, int y, int n) const {
     for (int c = 0; c < 9; ++c) {
         if (c != x && GetCell(c, y) == n) {
             return false;
