@@ -10,6 +10,7 @@ Solver of Sudoku puzzles
 `./sudoku < samples/example.txt`
 
 or
+
 `./sudoku --animate < samples/example.txt`
 
 ## Cleanup
