@@ -6,7 +6,7 @@
 #include "grid.h"
 
 void Animate(const Grid &g) {
-  std::cout << "\033[20F";
+  std::cout << "\033[19F";
   g.Print();
   std::this_thread::sleep_for(std::chrono::milliseconds(20));
 }
