@@ -42,22 +42,30 @@ int Grid::GetCell(int x, int y) const {
 }
 
 void Grid::Print() const {
+    puts("┏━━━┯━━━┯━━━┳━━━┯━━━┯━━━┳━━━┯━━━┯━━━┓");
     for (int y = 0; y < 9; ++y) {
+        fputs("┃", stdout);
         for (int x = 0; x < 9; ++x) {
             int n = GetCell(x, y);
             if (n != 0) {
                 printf(" %d", n);
             } else {
-                fputs(" .", stdout);
+                fputs("  ", stdout);
             }
 
-            if (x == 2 || x == 5) {
-                fputs(" |", stdout);
+            if (x == 2 || x == 5 || x == 8) {
+                fputs(" ┃", stdout);
+            } else {
+                fputs(" │", stdout);
             }
         }
         putchar('\n');
         if (y == 2 || y == 5) {
-            puts("----------------------");
+            puts("┣━━━┿━━━┿━━━╋━━━┿━━━┿━━━╋━━━┿━━━┿━━━┫");
+        } else if (y == 8) {
+            puts("┗━━━┷━━━┷━━━┻━━━┷━━━┷━━━┻━━━┷━━━┷━━━┛");
+        } else {
+            puts("┠───┼───┼───╂───┼───┼───╂───┼───┼───┨");
         }
     }
 }
