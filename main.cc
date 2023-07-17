@@ -6,6 +6,8 @@
 #include "input.h"
 #include "solver.h"
 
+using hrclock = std::chrono::high_resolution_clock;
+
 int main(int argc, char **argv) {
   bool animate = false;
   if (argc > 1 && std::string(argv[1]) == "--animate") {
@@ -18,9 +20,9 @@ int main(int argc, char **argv) {
   }
   std::cout << "\nSolving...\n";
   g->Print();
-  auto start = std::chrono::high_resolution_clock::now();
+  auto start = hrclock::now();
   bool solved = Solve(*g, animate);
-  auto stop = std::chrono::high_resolution_clock::now();
+  auto stop = hrclock::now();
   if (solved) {
     std::cout << "\nSolved.\n";
     if (!animate) g->Print();
