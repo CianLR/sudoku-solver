@@ -13,21 +13,22 @@ int main(int argc, char **argv) {
     }
     auto g = ReadGridStdin();
     if (!g.has_value()) {
+        std::cout << "Unable to parse input.\n";
         return 1;
     }
-    std::cout << "\nSolving\n";
+    std::cout << "\nSolving...\n";
     g->Print();
     auto start = std::chrono::high_resolution_clock::now();
     bool solved = Solve(*g, animate);
     auto stop = std::chrono::high_resolution_clock::now();
     if (solved) {
-        std::cout << "\nSolved\n";
+        std::cout << "\nSolved.\n";
         if (!animate) g->Print();
     } else {
-        std::cout << "\nCould not solve\n";
+        std::cout << "\nCould not solve.\n";
     }
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     if (!animate) {
-        std::cout << "\nSolver time " << duration.count() << "usec\n";
+        std::cout << "\nSolver time " << duration.count() << "usec.\n";
     }
 }
