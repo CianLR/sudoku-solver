@@ -2,4 +2,4 @@
 
 #include "grid.h"
 
-bool Solve(Grid &g);
+bool Solve(Grid &g, bool animate);
