@@ -12,3 +12,8 @@ Solver of Sudoku puzzles
 ## Cleanup
 
 `make clean`
+
+## Example Output
+
+<img src="https://github.com/cianlr/sudoku-solver/raw/main/screenshot.png">
+
