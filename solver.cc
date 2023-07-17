@@ -1,12 +1,12 @@
 #include <chrono>
 #include <thread>
-#include <stdio.h>
+#include <iostream>
 
 #include "solver.h"
 #include "grid.h"
 
 void Animate(const Grid &g) {
-    puts("\033[20F");
+    std::cout << "\033[20F";
     g.Print();
     std::this_thread::sleep_for(std::chrono::milliseconds(20));
 }

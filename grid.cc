@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 #include "grid.h"
 
@@ -42,30 +42,30 @@ int Grid::GetCell(int x, int y) const {
 }
 
 void Grid::Print() const {
-    puts("┏━━━┯━━━┯━━━┳━━━┯━━━┯━━━┳━━━┯━━━┯━━━┓");
+    std::cout << "┏━━━┯━━━┯━━━┳━━━┯━━━┯━━━┳━━━┯━━━┯━━━┓\n";
     for (int y = 0; y < 9; ++y) {
-        fputs("┃", stdout);
+        std::cout << "┃";
         for (int x = 0; x < 9; ++x) {
             int n = GetCell(x, y);
             if (n != 0) {
-                printf(" %d", n);
+                std::cout << " " << n;
             } else {
-                fputs("  ", stdout);
+                std::cout << "  ";
             }
 
             if (x == 2 || x == 5 || x == 8) {
-                fputs(" ┃", stdout);
+                std::cout << " ┃";
             } else {
-                fputs(" │", stdout);
+                std::cout << " │";
             }
         }
-        putchar('\n');
+        std::cout << '\n';
         if (y == 2 || y == 5) {
-            puts("┣━━━┿━━━┿━━━╋━━━┿━━━┿━━━╋━━━┿━━━┿━━━┫");
+            std::cout << "┣━━━┿━━━┿━━━╋━━━┿━━━┿━━━╋━━━┿━━━┿━━━┫\n";
         } else if (y == 8) {
-            puts("┗━━━┷━━━┷━━━┻━━━┷━━━┷━━━┻━━━┷━━━┷━━━┛");
+            std::cout << "┗━━━┷━━━┷━━━┻━━━┷━━━┷━━━┻━━━┷━━━┷━━━┛\n";
         } else {
-            puts("┠───┼───┼───╂───┼───┼───╂───┼───┼───┨");
+            std::cout << "┠───┼───┼───╂───┼───┼───╂───┼───┼───┨\n";
         }
     }
 }
