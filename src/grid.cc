@@ -5,8 +5,8 @@
 Grid::Grid() : cells{0} {}
 
 int CalcIndex(int x, int y) {
-  if (x < 0 || x >= 9) return false;
-  if (y < 0 || y >= 9) return false;
+  if (x < 0 || x >= 9) return -1;
+  if (y < 0 || y >= 9) return -1;
   int index = x + (9 * y);
   if (index < 0 || index >= (9*9)) {
     return -1;
